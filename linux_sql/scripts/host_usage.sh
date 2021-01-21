@@ -1,9 +1,9 @@
 #!/bin/bash
-'This is a bash script for collecting usage information to store in database
-Script usage:
-bash scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
-Example:
-bash scripts/host_usage.sh localhost 5432 host_agent postgres password '
+#This is a bash script for collecting usage information to store in database
+#Script usage:
+#bash scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+#Example:
+#bash scripts/host_usage.sh localhost 5432 host_agent postgres password
 
 #Assign CLI arguments to variables
 psql_host=$1
@@ -15,7 +15,7 @@ psql_password=$5
 #This usage info will pop up every time the user provides wrong or missing arguments
 usage="Usage: scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password"
 #Validate arguments
-if [ "$#" ne 5 ]; then
+if [ "$#" -ne 5 ]; then
     echo "Error: illegal number of arguments. Correct usage: $usage"
     exit 1
 fi
@@ -36,5 +36,5 @@ VALUES ('$timestamp', (SELECT id FROM host_info WHERE host_info.hostname = '$hos
 export PGPASSWORD="$psql_password"
 
 #execute the INSERT statement
-psql -h "$psql_host" -p "$psql_port" -U "$psql_user" -d "$db_name" -c "$statement"
+psql -h "$psql_host" -p "$psql_port" -U "$psql_user" -d "$db_name" -c "$insert_stmt"
 exit $?
