@@ -1,7 +1,6 @@
 # Linux Cluster Monitoring Agent 😎
 A monitoring agent that helps you keep track of your machines' hardware resource usage and allocation in real-time.
-![Architecture Overview](linux_sql/assets/LCMA_diagram.png)
-Format: ![Alt Text](url)
+![Architecture Overview](/assets/LCMA_diagram.jpg)
 
 ## Introduction
 This project automates the process of monitoring servers/nodes of linux that are connected through a switch and communicates internally through IPv4 addresses. This simplifies the jobs of infrastructure managers, sys admins or even site reliability engineers who wants to monitor hardware specifications of servers/nodes and resource usages (e.g number of CPU, free memory, cache, etc). Allowing for comparison of current asset to future asset needs based on the information gathered to make informed decisions for enterprise planning. 
