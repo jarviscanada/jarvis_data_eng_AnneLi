@@ -1,6 +1,6 @@
 # Linux Cluster Monitoring Agent 😎
 A monitoring agent that helps you keep track of your machines' hardware resource usage and allocation in real-time.
-![Architecture Overview](/assets/LCMA_diagram.jpg)
+![Architecture Overview](./assets/LCMA_diagram.jpg)
 
 ## Introduction
 This project automates the process of monitoring servers/nodes of linux that are connected through a switch and communicates internally through IPv4 addresses. This simplifies the jobs of infrastructure managers, sys admins or even site reliability engineers who wants to monitor hardware specifications of servers/nodes and resource usages (e.g number of CPU, free memory, cache, etc). Allowing for comparison of current asset to future asset needs based on the information gathered to make informed decisions for enterprise planning. 
@@ -52,28 +52,28 @@ crontab -l
 ## Database Modeling
 - Describing the schema of each table 
 - The `host_info` table contains information of hardware specifications of the cpu/node
-| Field | Description |
-| ----- | ----------- |
-id | Unique primary key for the host, auto-incremented
-hostname | Content in the second column
-cpu_number | Number of cpu cores
-cpu_architecture | CPU architecture (x86_64)
-cpu_model | Model of CPU "Intel(R) Xeon(R) CPU @ 2.30GHz" 
-cpu_mhz | Clock speed of the cpu in MHz
-l2_cache |  L2 cache in KB   
-total_mem | Total RAM in MB
-timestamp | The time when the host_info specifications were taken
+   Field | Description 
+   ----- | ----------- 
+  id | Unique primary key for the host, auto-incremented
+  hostname | Content in the second column
+  cpu_number | Number of cpu cores
+  cpu_architecture | CPU architecture (x86_64)
+  cpu_model | Model of CPU "Intel(R) Xeon(R) CPU @ 2.30GHz" 
+  cpu_mhz | Clock speed of the cpu in MHz
+  l2_cache |  L2 cache in KB   
+  total_mem | Total RAM in MB
+  timestamp | The time when the host_info specifications were taken
 
 - The `host_usage` table contains information about individual cpu/node usage
-| Field | Description |
-| ----- | ----------- |
-timestamp | The time when the host_usage data were taken 
-host_id | Host identifier
-memory_free | Free RAM in MB
-cpu_idle | % of time the CPU is idle
-cpu_kernel | % of time the CPU is running kernel code
-disk_io | Number of disks undergoing I/O processes
-disk_available | Available space in the disk's root directory in MB
+   Field | Description 
+   ----- | ----------- 
+  timestamp | The time when the host_usage data were taken 
+  host_id | Host identifier
+  memory_free | Free RAM in MB
+  cpu_idle | % of time the CPU is idle
+  cpu_kernel | % of time the CPU is running kernel code
+  disk_io | Number of disks undergoing I/O processes
+  disk_available | Available space in the disk's root directory in MB
 
 ## Test
 How did you test your bash scripts and SQL queries? What was the result?
