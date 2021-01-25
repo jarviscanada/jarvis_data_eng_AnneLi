@@ -4,7 +4,7 @@
 #Usage:
 #./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
 #Example:
-#./scripts/host_info.sh "localhost" 5432 "host_agent" "postgres" "mypassword" '
+#./scripts/host_info.sh "localhost" 5432 "host_agent" "postgres" "password" '
 
 #Assign CLI arguments to variables
 psql_host=$1
