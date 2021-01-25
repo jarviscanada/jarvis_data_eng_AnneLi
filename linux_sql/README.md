@@ -52,7 +52,7 @@ crontab -l
 - Describing the schema of each table 
 - The `host_info` table contains information of hardware specifications of the cpu/node
 Field | Description
------------- | -------------
+----- | -----------
 id | Unique primary key for the host, auto-incremented
 hostname | Content in the second column
 cpu_number | Number of cpu cores
@@ -64,6 +64,8 @@ total_mem | Total RAM in MB
 timestamp | The time when the host_info specifications were taken
 
 - The `host_usage` table contains information about individual cpu/node usage
+Field | Description
+----- | -----------
 timestamp | The time when the host_usage data were taken 
 host_id | Host identifier
 memory_free | Free RAM in MB
