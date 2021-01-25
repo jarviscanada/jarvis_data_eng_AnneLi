@@ -1,13 +1,15 @@
 # Linux Cluster Monitoring Agent 😎
 A monitoring agent that helps you keep track of your machines' hardware resource usage and allocation in real-time.
-![Architecture Overview](/assets/LCMA_diagram.png)
+![Architecture Overview](linux_sql/assets/LCMA_diagram.png)
+Format: ![Alt Text](url)
 
 ## Introduction
 This project automates the process of monitoring servers/nodes of linux that are connected through a switch and communicates internally through IPv4 addresses. This simplifies the jobs of infrastructure managers, sys admins or even site reliability engineers who wants to monitor hardware specifications of servers/nodes and resource usages (e.g number of CPU, free memory, cache, etc). Allowing for comparison of current asset to future asset needs based on the information gathered to make informed decisions for enterprise planning. 
 
 The linux cluster monitoring agent (LCMA) is powered by [docker](https://docs.docker.com/) containers under the hood to provision a postgreSQL (psql) database instance to collect information from the host machines. The project contains a bash script that automatically configures the creation of the psql container using docker and two other bash scripts that are installed on the servers as monitoring agents to retrieve relative data about host usage and host information. The data retrieved will then populate the psql database table running in the container.
 
-Note: I use clusters/servers/nodes interchangeably. They mean the same thing.
+Note: I use clusters/servers/nodes interchangeably. 
+
 ## Quick Start
 ```
 - Start a psql instance using psql_docker.sh
@@ -34,25 +36,25 @@ crontab -l
 ```
 
 ## Implementations
-* A [PostgreSQL](https://www.postgresql.org/) instance is used to persist all the data. The server hosting the database needs the following two scripts:
+1. A [PostgreSQL](https://www.postgresql.org/) instance is used to persist all the data. The server hosting the database needs the following two scripts:
 
-  * [psql_docker.sh](./scripts/psql_docker.sh) acts as a switch to start/stop the psql instance.
+  - [psql_docker.sh](./scripts/psql_docker.sh) acts as a switch to start/stop the psql instance.
   
-  * [ddl.sql](./sql/ddl.sql) automates the database initialization.  
+  - [ddl.sql](./sql/ddl.sql) automates the database initialization.  
 
-* The bash agent gathers server usage data, and then insert into the psql instance. The agent will be installed on every host/server/node. The agent consists of two bash scripts:
+2. The bash scripts gather server usage data, and then insert into the psql instance. The agent will be installed on every host/server/node. The agent consists of two bash scripts:
 
-  * [host_info.sh](./scripts/host_info.sh) collects the host hardware info and insert it into the database. It will be run only once at the installation time.
+  - [host_info.sh](./scripts/host_info.sh) collects the host hardware info and insert it into the database. It will be run only once at the installation time.
 
-  * [host_usage.sh](./scripts/host_usage.sh) collects the current host usage (CPU and Memory) and then insert into the database. It will be triggered by the crontab job every minute.
+  - [host_usage.sh](./scripts/host_usage.sh) collects the current host usage (CPU and Memory) and then insert into the database. It will be triggered by the crontab job every minute.
   
-* [queries.sql](./sql/queries.sql) contains some pre-written queries that help cluster administrator to manage the cluster better and plan for future recourses.  
+3. [queries.sql](./sql/queries.sql) contains some pre-written queries that help cluster administrator to manage the cluster better and plan for future resources  
 
 ## Database Modeling
 - Describing the schema of each table 
 - The `host_info` table contains information of hardware specifications of the cpu/node
-Field | Description
-------|------------
+| Field | Description |
+| ----- | ----------- |
 id | Unique primary key for the host, auto-incremented
 hostname | Content in the second column
 cpu_number | Number of cpu cores
@@ -64,8 +66,8 @@ total_mem | Total RAM in MB
 timestamp | The time when the host_info specifications were taken
 
 - The `host_usage` table contains information about individual cpu/node usage
-Field | Description
-------|------------
+| Field | Description |
+| ----- | ----------- |
 timestamp | The time when the host_usage data were taken 
 host_id | Host identifier
 memory_free | Free RAM in MB
