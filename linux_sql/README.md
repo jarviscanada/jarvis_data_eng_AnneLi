@@ -77,7 +77,7 @@ crontab -l
      ./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
   ```  
   Implement `crontab` to allow the script to run every minute to insert a new entry into the database. Use following crontab commands:
-  ``` 
+  ```bash 
     # edit cronjobs
     bash crontab -e
     # add this to the VIM editor when it opens up to allow the script to run every minute
