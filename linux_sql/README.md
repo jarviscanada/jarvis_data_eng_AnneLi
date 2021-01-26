@@ -11,28 +11,28 @@ Note: I use clusters/servers/nodes interchangeably.
 
 ## Quick Start
 ```
-- Start a psql instance using psql_docker.sh
+# Start a psql instance using psql_docker.sh
 ./scripts/psql_docker.sh create db_username db_password
 
-- Create tables using ddl.sql
+# Create tables using ddl.sql
 psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 
-- Insert hardware specs data into the db using host_info.sh
+# Insert hardware specs data into the db using host_info.sh
 ./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
 e.g ./scripts/host_info.sh localhost 5432 host_agent postgres password
 
-- Insert hardware usage data into the db using host_usage.sh
+# Insert hardware usage data into the db using host_usage.sh
 ./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
 e.g ./scripts/host_usage.sh localhost 5432 host_agent postgres password
 
-- Crontab setup to automate the collection of the usage statistics every minute
-- edit cronjobs
+# Crontab setup to automate the collection of the usage statistics every minute
+# edit cronjobs
 crontab -e 
 
-- add this line to crontab, the usage data will be collected every minute (indicated by * * * * *)
+# add this line to crontab, the usage data will be collected every minute (indicated by * * * * *)
 * * * * * bash <your path>/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
 
-- list crontab jobs
+# list crontab jobs
 crontab -l
 ```
 
@@ -78,9 +78,9 @@ crontab -l
   ```  
   Implement `crontab` to allow the script to run every minute to insert a new entry into the database. Use following crontab commands:
   ``` 
-    - edit cronjobs
+    # edit cronjobs
     bash crontab -e
-    - add this to the VIM editor when it opens up to allow the script to run every minute
+    # add this to the VIM editor when it opens up to allow the script to run every minute
     * * * * * bash <your path>/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
   ```
   To exit the vim editor press `Esc` key and type `:wq:` and press enter to return back to terminal.
