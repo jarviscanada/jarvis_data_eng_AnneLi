@@ -65,12 +65,12 @@ crontab -l
   ```bash
      ./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
   ```
-  Set the inputs as follows:
-* `psql_host`: IP address that the PostgreSQL instance is running on (ran localhost for testing)
-* `psql_port`: port number of the PostgreSQL instance; default port is 5432
-* `db_name`: host_agent
-* `psql_user`: postgres
-* `psql_password`: enter desired login password to the PostgreSQL instance
+    Set the inputs as follows:
+  * `psql_host`: IP address that the PostgreSQL instance is running on (ran localhost for testing)
+  * `psql_port`: port number of the PostgreSQL instance; default port is 5432
+  * `db_name`: host_agent
+  * `psql_user`: postgres
+  * `psql_password`: enter desired login password to the PostgreSQL instance
 
   - [host_usage.sh](./scripts/host_usage.sh) collects the host usage (CPU and Memory) and inserts into the database. It will be triggered by the crontab job every minute.
   ```bash
