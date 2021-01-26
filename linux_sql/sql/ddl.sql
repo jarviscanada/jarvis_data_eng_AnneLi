@@ -1,7 +1,6 @@
 -- switch to host_agent, connects to database
 \c host_agent
 
-#create host_info table if does not exist
 CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
     id SERIAL NOT NULL PRIMARY KEY UNIQUE,
     hostname VARCHAR NOT NULL,
@@ -14,7 +13,6 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
     "timestamp" TIMESTAMP NOT NULL
 );
 
-#create host_usage table if does not exist
 CREATE TABLE IF NOT EXISTS PUBLIC.host_usage (
     "timestamp" TIMESTAMP NOT NULL,
     host_id INT NOT NULL REFERENCES host_info,
