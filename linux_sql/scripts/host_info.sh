@@ -30,8 +30,8 @@ cpu_number=$(lscpu | awk '/CPU\(s\)/{print $2; exit}')
 cpu_architecture=$(lscpu | awk '/^Arch/{print $2; exit}')
 cpu_model=$(lscpu | awk '/^Model/{print $2; exit}')
 cpu_mhz=$(lscpu | awk '/^CPU MHz:/{print $3; exit}')
-L2_cache=$(lscpu | awk '/^L2 cache:/{print $3; exit}')
-total_mem=$(cat /proc/meminfo | awk '/^MemTotal:/{print $2 " " $3; exit}')
+L2_cache=$(lscpu | sed 's/[[:alpha:]]$//' | awk '/^L2 cache:/{print $3; exit}')
+total_mem=$(cat /proc/meminfo | awk '/^MemTotal:/{print $2; exit}')
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 
 #Insert data into PSQL from Bash script

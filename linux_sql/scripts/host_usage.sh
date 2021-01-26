@@ -23,11 +23,11 @@ fi
 #Parse server CPU and memory usage data and assign them to meaningful variables
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 hostname="$(hostname -f)"
-memory_free=$(cat /proc/meminfo | awk '/^MemFree/{print $2 " " $3; exit}')
+memory_free=$(cat /proc/meminfo | awk '/^MemFree/{print $2; exit}')
 cpu_idle=$(vmstat | awk '/^ [0-9]/{print $15; exit}')
 cpu_kernel=$(vmstat | awk '/^ [0-9]/{print $14; exit}')
-disk_io=$(vmstat -d | awk '/^sda/{print "cur: " $10 " sec: " $11; exit}')
-disk_available=$(df -BM / | awk '/dev/{print $4; exit}')
+disk_io=$(vmstat -d | awk '/^sda/{print $10; exit}')
+disk_available=$(df -BM / | awk '/dev/{gsub(/M/, ""); print $4; exit}')
 
 #construct the INSERT statement. (Use a subquery to get id by hostname)
 insert_stmt="INSERT INTO host_usage (timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available)
