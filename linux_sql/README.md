@@ -10,7 +10,7 @@ The linux cluster monitoring agent (LCMA) is powered by [docker](https://docs.do
 Note: I use clusters/servers/nodes interchangeably. 
 
 ## Quick Start
-```
+```bash
 # Start a psql instance using psql_docker.sh
 ./scripts/psql_docker.sh create db_username db_password
 
