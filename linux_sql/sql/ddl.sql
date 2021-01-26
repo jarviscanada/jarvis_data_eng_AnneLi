@@ -2,8 +2,8 @@
 \c host_agent
 
 CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
-    id SERIAL NOT NULL PRIMARY KEY UNIQUE,
-    hostname VARCHAR NOT NULL,
+    id SERIAL NOT NULL PRIMARY KEY,
+    hostname VARCHAR NOT NULL UNIQUE,
     cpu_number INT NOT NULL,
     cpu_architecture VARCHAR NOT NULL,
     cpu_model VARCHAR NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
 
 CREATE TABLE IF NOT EXISTS PUBLIC.host_usage (
     "timestamp" TIMESTAMP NOT NULL,
-    host_id INT NOT NULL REFERENCES host_info,
+    host_id SERIAL NOT NULL REFERENCES host_info,
     memory_free INT NOT NULL,
     cpu_idle INT NOT NULL,
     cpu_kernel INT NOT NULL,
