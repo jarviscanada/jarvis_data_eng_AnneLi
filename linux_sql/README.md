@@ -65,8 +65,8 @@ crontab -l
   ```bash
      ./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
   ```
-   Set the inputs as follows:
-      * `psql_host`: IP address that the PostgreSQL instance is running on (ran localhost for testing)
+   * Set the inputs as follows:
+      *  `psql_host`: IP address that the PostgreSQL instance is running on (ran localhost for testing)
       * `psql_port`: port number of the PostgreSQL instance; default port is 5432
       * `db_name`: host_agent
       * `psql_user`: postgres
