@@ -14,6 +14,13 @@ Note: I use clusters/servers/nodes interchangeably.
 # Start a psql instance using psql_docker.sh
 ./scripts/psql_docker.sh create db_username db_password
 
+# Connect to the PostgreSQL instance
+psql -h localhost -U postgres -W
+
+# You will now be in the "Read-Evaluate-Print Loop" (REPL) of the PostgreSQL instance (`postgres=#`), create a database using the following command:
+CREATE DATABASE host_agent;
+\q
+
 # Create tables using ddl.sql
 psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 
