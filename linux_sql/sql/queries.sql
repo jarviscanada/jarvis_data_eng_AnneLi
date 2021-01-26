@@ -1,6 +1,6 @@
 SELECT cpu_number, id as host_id, total_mem
     FROM PUBLIC.host_info
-    GROUP BY cpu_number
+    GROUP BY cpu_number, total_mem
 ORDER BY total_mem DESC;
 
 -- function to round off every 5 minutes
@@ -17,7 +17,7 @@ SELECT host_id, hostname, round5(host_usage.timestamp) AS timestamp_5,
        FROM host_usage
          INNER JOIN host_info
             ON host_info.id = host_usage.host_id
-    GROUP BY host_id, timestamp_5, hostname
+    GROUP BY host_id, timestamp_5, hostname, host_info.id
     ORDER BY host_id;
 
 SELECT host_id, timestamp, round5(timestamp), COUNT(*) as num_of_datapoints
