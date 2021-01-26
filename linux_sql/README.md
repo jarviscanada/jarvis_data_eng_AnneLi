@@ -11,46 +11,91 @@ Note: I use clusters/servers/nodes interchangeably.
 
 ## Quick Start
 ```
-- Start a psql instance using psql_docker.sh
+# Start a psql instance using psql_docker.sh
 ./scripts/psql_docker.sh create db_username db_password
 
-- Create tables using ddl.sql
+# Create tables using ddl.sql
 psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 
-- Insert hardware specs data into the db using host_info.sh
-scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+# Insert hardware specs data into the db using host_info.sh
+./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+e.g ./scripts/host_info.sh localhost 5432 host_agent postgres password
 
-- Insert hardware usage data into the db using host_usage.sh
-scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+# Insert hardware usage data into the db using host_usage.sh
+./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+e.g ./scripts/host_usage.sh localhost 5432 host_agent postgres password
 
-- Crontab setup to automate the collection of the usage statistics every minute
-- edit cronjobs
+# Crontab setup to automate the collection of the usage statistics every minute
+# edit cronjobs
 crontab -e 
 
-- add this line to crontab, the usage data will be collected every minute (indicated by * * * * *)
-* * * * * bash /home/centos/dev/jrvs/bootcamp/linux_sql/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
+# add this line to crontab, the usage data will be collected every minute (indicated by * * * * *)
+* * * * * bash <your path>/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
 
-- list crontab jobs
+# list crontab jobs
 crontab -l
 ```
 
 ## Implementations
-1. A [PostgreSQL](https://www.postgresql.org/) instance is used to persist all the data. The server hosting the database needs the following two scripts:
-
+1. A [PostgreSQL](https://www.postgresql.org/) instance is used to persist all the data. The server hosting the database needs the following script:
   - [psql_docker.sh](./scripts/psql_docker.sh) acts as a switch to start/stop the psql instance.
-  
-  - [ddl.sql](./sql/ddl.sql) automates the database initialization.  
+  - Go to the project directory to run the command to start the postgreSQL container:
+  ```bash 
+     # creates a psql docker container with the given username and password
+     ./scripts/psql_docker.sh create db_username db_pasword
+     
+     # start the psql docker container
+     ./scripts/psql_docker.sh start
+     
+     # stop the psql docker container
+     ./scripts/psql_docker.sh stop
+  ```
 
-2. The bash scripts gather server usage data, and then insert into the psql instance. The agent will be installed on every host/server/node. The agent consists of two bash scripts:
+2. The host agent database consist of two tables `host_info` and `host_usage`. They can be found inside this script:
+  - [ddl.sql](./sql/ddl.sql) creates the two tables that holds host_info and host_usage data. Usage as follows:
+  ```bash 
+     # The above docker instance needs to be running first 
+     # Execute ddl.sql script on the host_agent database against the psql instance
+     psql -h localhost -U postgres -d host_agent -f sql/ddl.sql 
+  ```
+
+3. The bash scripts to gather server usage data, which then insert into the psql instance. The agent will be installed on every server/node. The agent consists of two bash scripts:
 
   - [host_info.sh](./scripts/host_info.sh) collects the host hardware info and insert it into the database. It will be run only once at the installation time.
+  ```bash
+     ./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+  ```
+   * Set the inputs as follows:
+      *  `psql_host`: IP address that the PostgreSQL instance is running on (ran localhost for testing)
+      * `psql_port`: port number of the PostgreSQL instance; default port is 5432
+      * `db_name`: host_agent
+      * `psql_user`: postgres
+      * `psql_password`: enter desired login password to the PostgreSQL instance
 
-  - [host_usage.sh](./scripts/host_usage.sh) collects the current host usage (CPU and Memory) and then insert into the database. It will be triggered by the crontab job every minute.
+  - [host_usage.sh](./scripts/host_usage.sh) collects the host usage (CPU and Memory) and inserts into the database. It will be triggered by the crontab job every minute.
+  ```bash
+     ./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+  ```  
+  Implement `crontab` to allow the script to run every minute to insert a new entry into the database. Use following crontab commands:
+  ```bash 
+    # edit cronjobs
+    bash crontab -e
+    # add this to the VIM editor when it opens up to allow the script to run every minute
+    * * * * * bash <your path>/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
+  ```
+  To exit the vim editor press `Esc` key and type `:wq:` and press enter to return back to terminal.
   
-3. [queries.sql](./sql/queries.sql) contains some pre-written queries that help cluster administrator to manage the cluster better and plan for future resources  
-
+4. [queries.sql](./sql/queries.sql) contains some queries that help the linux cluster administrator to monitor the cluster better for future resource planning. 
+  ```bash
+    # Execute ddl.sql script on the host_agent database against the psql instance
+    psql -h localhost -U postgres -d host_agent -f sql/queries.sql
+  ```
+  * The first query groups hosts by their hardware information such as their cpu_number and sorted by their memory size in descending order within each cpu_number group. This helps the administrator see the cluster's memory distribution in the linux host machines.
+  * The second query calculates the average used memory in percentage over 5 mins interval for each host. (used memory = total memory - free memory).
+  * The third query captures the host failures which are detected if the data points collected between a 5-min interval is less than three. The cron job is supposed to insert a new entry to the host_usage table every minute when the server is healthy. 
+   
 ## Database Modeling
-- Describing the schema of each table 
+- Database schema of each table 
 - The `host_info` table contains information of hardware specifications of the cpu/node
    Field | Description 
    ----- | ----------- 
@@ -75,12 +120,11 @@ crontab -l
   disk_io | Number of disks undergoing I/O processes
   disk_available | Available space in the disk's root directory in MB
 
-## Test
-How did you test your bash scripts and SQL queries? What was the result?
+## Testing
+- The bash script commands were tested by running them line by line on the command line to verify it's function. The entire bash script combined were also tested by running the script to verify the correctness of it's functions by following the steps on [implementations](#Implementations)
+- The SQL queries written were tested on the PSQL command line and outputs were checked on the IntelliJ Ultimate database tool.
 
-## Improvements
-Write at least three things you want to improve 
-e.g. 
-- handle hardware update 
-- blah
-- blah
+## Areas of Improvements
+- Write more queries to detect several types of system failures from resource usage data and automate it to notify the linux cluster administrator when metrics drop below standard threshold
+- Improve the host failure query to automatically detect when the node failed to insert three or more datapoints during a 5-minute interval
+- Create a visualization board and populate it with data from the database to monitor server health, long term performance and drive business decisions
