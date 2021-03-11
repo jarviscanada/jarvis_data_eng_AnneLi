@@ -1,13 +1,12 @@
 # Introduction
 This app demonstrates the JDBC workflow in a maven project. It connects to a containerized 
 PostgreSQL database, executes some statements,processes the results and closes the connection. 
-# Implementation
-## ER Diagram
-ER diagram
+
+# ER Diagram
+The image below is an entity relationship diagram showing the relationships amongst the tables.
+![ER Diagram](./assets/ERD.PNG)
 
 ## Design Patterns
-Discuss DAO and Repository design patterns (150-200 words) 
-
 ###Data Access Object (DAO)
 DAO's (Data Access Objects) are one of the most common patterns when dealing with databases.
 They provide an abstraction layer between the raw JDBC code and the business logic. They are useful
