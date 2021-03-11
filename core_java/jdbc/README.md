@@ -7,7 +7,7 @@ The image below is an entity relationship diagram showing the relationships amon
 ![ER Diagram](./assets/ERD.PNG)
 
 ## Design Patterns
-###Data Access Object (DAO)
+### Data Access Object (DAO)
 DAO's (Data Access Objects) are one of the most common patterns when dealing with databases.
 They provide an abstraction layer between the raw JDBC code and the business logic. They are useful
 because they allow us to have a single instance of the database and to compute the joins using the
@@ -19,7 +19,7 @@ remote data sources. DAOs will typically work with multiple related DTOs and def
 functions to the Database. Because of this deferral, a DAO will typically need fewer statements and 
 connections to do its job. 
 
-###Repository
+### Repository
 The Repository pattern involves using simple queries to collect and transform data in remote data 
 sources. Unlike the DAO pattern, it focuses on single-table access per class - working with only a 
 single DTO. Repositories will typically perform any Joins or other data transformations for 
