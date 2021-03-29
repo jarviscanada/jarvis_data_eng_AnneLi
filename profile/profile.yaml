@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AnneLi
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: Hey,👋 I'm Anne, thanks for dropping by my little developer corner. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in a collaborative environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer. 
+summary: Hey,? I'm Anne, thanks for dropping by my little developer corner. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in a collaborative environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -20,7 +20,7 @@ skills:
   # At least 5 skills
   competent:
     - C
-    - Javascript
+    - JavaScript
     - Python
     - HTML
     - CSS
@@ -55,7 +55,7 @@ jarvis_projects:
     description: "In-progress"
   - name: "Hadoop"
     git_url: "/hadoop"
-    description: "In-progress"
+    description: ""
   - name: "Spark"
     git_url: "/spark"
     description: "In-progress"
@@ -66,20 +66,20 @@ jarvis_projects:
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
-    #project name
+  #project name
   - name: "SERVE.AI (Web application)"
     #URL is optional
     #git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Developed an Online Cafeteria Application utilizing the Django framework, SQLite3, Bootstrap using Agile methodologies and practices. Practiced SDLC process models, requirements elicitation, system modelling, project management, teamwork, navigating documentations and software testing."
+    description: Developed an Online Cafeteria Application utilizing the Django framework, SQLite3, Bootstrap using Agile methodologies and practices. Practiced SDLC process models, requirements elicitation, system modelling, project management, teamwork, navigating documentations and software testing.
   - name: "SMART CITY APPLICATION"
     #git_url:
-    description:  "Learned about distributed System and networking technology by designing and developing an urban IoT website which generates pickup schedule based on real-time capacity of sensor-attached garbage bin. Programmed ESP8266 using C++ in Arduino IDE to send JSON data via MQTT protocol to Raspberry Pi."
+    description: Learned about distributed System and networking technology by designing and developing an urban IoT website which generates pickup schedule based on real-time capacity of sensor-attached garbage bin. Programmed ESP8266 using C++ in Arduino IDE to send JSON data via MQTT protocol to Raspberry Pi.
 
 #List of professional experience
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
 #The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
-related_experience:
+professional_experience:
   #Write your Jarvis role as a professional experience rather than training.
   - title: "Data Engineer"
     company: "Jarvis"
@@ -95,7 +95,7 @@ related_experience:
     duration: "May 2019-August 2019"
     description: "Developed a data visualization tool to analyze performance efficiently using PowerBI and VBA. Contributed to automation projects and development of technology roadmaps."
 #List of edcuation
-education: 
+education:
   - school_name: "Ryerson University"
     duration: "2015-2020"
     degree: "Bachelor of Engineering"
@@ -107,10 +107,10 @@ education:
 #Optional section
 others:
     #category     
-  - title: "Activities/Hobbies"
-    bullets:
-      - "Hackathon Winner (RU Hacks 2020)"
-      - "Web developer (Volunteer at IEEE Ryerson Electronics Chapter)"
-      - "Yoga practice"
-      - "Notion lover"
-      - "Hiking and exploring Ontario⛺"
+    - title: "Activities/Hobbies"
+      bullets:
+        - "Hackathon Winner (RU Hacks 2020)"
+        - "Web developer (Volunteer at IEEE Ryerson Electronics Chapter)"
+        - "Yoga practice"
+        - "Notion lover"
+        - "Hiking and exploring Ontario⛺"
