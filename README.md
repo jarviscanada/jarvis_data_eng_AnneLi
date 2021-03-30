@@ -1,75 +1,60 @@
-<<<<<<< HEAD
-# Jarvis Data Engineering Training
-1. [Linux cluster monitoring agent (Linux and SQL)](./linux_sql)
-2. [Core Java Apps](./core_java) In-progress
-3. [Springboot Trading REST API](./springboot) In-progress
-4. [Hadoop/Hive](./hadoop) In-progress
-5. [Spark/Scala](./spark) In-progress
-6. [Cloud/DevOps](./cloud_devops) In-progress
-
-=======
 # Anne Li . Jarvis Consulting
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit.
+I recently graduated from Ryerson University where I received my Bachelor of Engineering, majoring in Computer Engineering. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in a collaborative environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer.
 
 ## Skills
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git
 
-**Competent:** Donec, fermentum, Donec, fermentum, Donec
+**Competent:** C, JavaScript, Python, HTML, CSS
 
-**Familiar:** Donec, fermentum, fermentum, fermentum, fermentum
+**Familiar:** Docker, GCP, Pub/Sub, REST API, Spring, Django/Flask, Matlab
 
 ## Jarvis Projects
 
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AnneLi](https://github.com/jarviscanada/jarvis_data_eng_AnneLi)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/linux_sql)]: This project automates the process of monitoring servers/nodes of linux that are connected through a switch and communicates internally through IPv4 addresses. Implemented bash scripts that obtain data on hardware specifications and on-going Linux resource usage data.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/core_java)]:
       
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - Twitter App: Implemented a CLI app that post|show|delete tweets to the user account from the command-line via Twiiter REST API using the MVC architecture.
+  - JDBC App: This project sets up a connection to the PostgreSQL database by leveraging the JDBC API that manages customer and order records.
+  - Grep App: This app echoes partial functionality of the linux command `grep`. The app searches for a text pattern recursively through all the files in a given directory and outputs the matched lines to a designated file.
 
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/springboot)]: Not Started
+**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/springboot)]: In-progress
 
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/python_data_anlytics)]: Not Started
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/python_data_anlytics)]: In-progress
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/hadoop)]: Not Started
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/spark)]: Not Started
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/spark)]: In-progress
 
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/cloud_devops)]: Not Started
+**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/cloud_devops)]: In-progress
 
 
 ## Highlighted Projects
-**Web app for resturant** [[GitHub](https://github.com/jarviscanada/jarvis_profile_builder)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**SERVE.AI (Web application)**: Developed an Online Cafeteria Application utilizing the Django framework, SQLite3, Bootstrap using Agile methodologies and practices. Practiced SDLC process models, requirements elicitation, system modelling, project management, teamwork, navigating documentations and software testing.
 
-**Machine Learning**: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**SMART CITY APPLICATION**: Learned about distributed System and networking technology by designing and developing an urban IoT website which generates pickup schedule based on real-time capacity of sensor-attached garbage bin. Programmed ESP8266 using C++ in Arduino IDE to send JSON data via MQTT protocol to Raspberry Pi.
 
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Data Engineer, Jarvis (Jan 2021-present)**: Implemented projects that solves Big-data problems utilizing a set of tools and technologies such as Linux, SQL, Core Java, SpringBoot, DevOps/Cloud, Hadoop and Spark/Scala. Conducted and participated in daily scrum meetings in a bi-weekly sprint.
 
-**Tutor, XYZ Company (2019)**: Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.
+**Coding Instructor, Codezilla (Jun 2020-Dec 2020)**: Led summer camp programs on game development and scratch coding to help youths develop problem-solving skills.
+
+**Software Engineer Intern, De Havilland (May 2019-August 2019)**: Developed a data visualization tool to analyze performance efficiently using PowerBI and VBA. Contributed to automation projects and development of technology roadmaps.
 
 
 ## Education
-**XYZ university (2012-2016)**, Bachelor of Applied Sciences, Electrical and Computer Engineering
-- Scholarship
-- Dean's List (2015, 2016): Ut enim ad minim veniam
-- GPA: 3.8/4.0
-
-**XYZ university (2016-2018)**, Master of Engineering, Electrical and Computer Engineering
+**Ryerson University (2015-2020)**, Bachelor of Engineering, Electrical and Computer Engineering
+- Dean's List (2019, 2020)
 
 
 ## Miscellaneous
-- Udacity Machine Learning (2019)
-- Winner
-- Basketball player
-- Competitive gaming
-- Volunteer, ABC Food bank: Ut enim ad minim veniam
->>>>>>> 99d25110fd73a8e6048ae57eac12a4c743963a9b
+- Hackathon Winner (RU Hacks 2020)
+- Web developer (Volunteer at IEEE Ryerson Electronics Chapter)
+- Hiking and exploring Ontario
