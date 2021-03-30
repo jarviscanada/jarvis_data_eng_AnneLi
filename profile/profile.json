@@ -1,0 +1,124 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "Dean's List (2019, 2020)"
+      ],
+      "degree": "Bachelor of Engineering",
+      "department": "Electrical and Computer Engineering",
+      "duration": "2015-2020",
+      "school_name": "Ryerson University"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_AnneLi",
+  "highlighted_projects": [
+    {
+      "description": "Developed an Online Cafeteria Application utilizing the Python/Django framework, SQLite3, Bootstrap using Agile methodologies and practices. Practiced SDLC process models, requirements elicitation, system modeling, project management, teamwork, navigating documentation, and software testing.",
+      "name": "SERVE.AI (Web application)"
+    },
+    {
+      "description": "Developed a Python/Flask web app that generates pickup schedules based on the real-time capacity of sensor-attached garbage bin. Programmed ESP8266 using C++ in Arduino IDE to send JSON data via MQTT protocol to Raspberry Pi.",
+      "name": "SMART CITY APPLICATION"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Implemented bash scripts that utilize docker, RDBMS/PostgreSQL, SQL, regex, awk, and crontab to automate the process of obtaining data on hardware specifications and on-going Linux resource usage data.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "Twitter App: Implemented a CLI app that post|show|delete tweets to the user account from the command-line via Twitter REST API using the MVC architecture. Developed using common libraries (HTTP, JSON, OAuth, I/O), tested using JUnit \u0026 Mockito and deployed on docker.",
+        "JDBC App: This project sets up a connection to the PostgreSQL database by leveraging the JDBC API that manages customer and order records.",
+        "Grep App: This app echoes partial functionality of the linux command `grep` using Java 8 Stream API and Lambda expressions. It searches for a text pattern recursively through all the files in a given directory and outputs the matched lines to a designated file."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "In-progress",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "In-progress",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "In-progress",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "In-progress",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Anne Li",
+  "others": [
+    {
+      "bullets": [
+        "Hackathon Winner (RU Hacks 2020)",
+        "Web developer (Volunteer at IEEE Ryerson Electronics Chapter)",
+        "Hiking and exploring Ontario"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Implemented projects that solve Big-data problems utilizing a set of tools and technologies such as Linux, SQL, Core Java, SpringBoot, DevOps/Cloud, Hadoop, Spark/Scala, and Agile. Conducted and participated in daily scrum meetings in a bi-weekly sprint. ",
+      "duration": "Jan 2021-present",
+      "title": "Data Engineer"
+    },
+    {
+      "company": "Codezilla",
+      "description": "Led summer camp programs on game development and scratch coding to help youths develop problem-solving skills.",
+      "duration": "Jun 2020-Dec 2020",
+      "title": "Coding Instructor"
+    },
+    {
+      "company": "De Havilland",
+      "description": "Developed and automated a data visualization tool to analyze the performance of the Q-Series Airline Operations business. Utilized PowerBI/VBA by extracting data from IBM Lotus Notes in CSV format and loading it into charts/reports. Worked in an Agile/Scrum environment with a team of 8 for iterating through the projects.",
+      "duration": "May 2019-August 2019",
+      "title": "Software Engineer Intern"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "C",
+      "JavaScript",
+      "Python",
+      "Docker",
+      "SpringBoot",
+      "Maven",
+      "HTML",
+      "CSS"
+    ],
+    "familiar": [
+      "GCP",
+      "REST API",
+      "Spring",
+      "Pub/Sub",
+      "Django/Flask",
+      "TDD"
+    ],
+    "proficient": [
+      "Java",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git"
+    ]
+  },
+  "summary": "I recently graduated from Ryerson University where I received my Bachelor of Engineering, majoring in Computer Engineering. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a software/data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in an Agile/Scrum environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer."
+}
