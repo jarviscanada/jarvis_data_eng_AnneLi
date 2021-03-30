@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AnneLi
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: Hey,? I'm Anne, thanks for dropping by my little developer corner. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in a collaborative environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer.
+summary: I recently graduated from Ryerson University where I received my Bachelor of Engineering, majoring in Computer Engineering. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in a collaborative environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -102,7 +102,7 @@ education:
     department: "Electrical and Computer Engineering"
     # optional
     awards_achievements: 
-      - "Dean's List (2019, 2020)
+      - "Dean's List (2019, 2020)"
 
 #Optional section
 others:
@@ -111,6 +111,4 @@ others:
       bullets:
         - "Hackathon Winner (RU Hacks 2020)"
         - "Web developer (Volunteer at IEEE Ryerson Electronics Chapter)"
-        - "Yoga practice"
-        - "Notion lover"
-        - "Hiking and exploring Ontario⛺"
+        - "Hiking and exploring Ontario"
