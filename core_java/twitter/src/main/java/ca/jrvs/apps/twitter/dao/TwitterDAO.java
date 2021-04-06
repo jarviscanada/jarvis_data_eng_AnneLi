@@ -1,12 +1,9 @@
 package ca.jrvs.apps.twitter.dao;
 
-import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
-import ca.jrvs.apps.twitter.dao.helper.TwitterHttpHelper;
+import ca.jrvs.apps.twitter.dao.httphelper.HttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.JsonUtil;
-import com.google.gdata.util.common.base.PercentEscaper;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import org.apache.http.HttpResponse;
@@ -31,6 +28,7 @@ public class TwitterDAO implements CrdDao<Tweet, String> {
    * Constructor generates a TwitterDAO object with
    * the requirement of passing in a httpHelper object parameter,
    * which is a TwitterHttpHelper object
+   *
    */
   private HttpHelper httpHelper;
 
@@ -38,41 +36,60 @@ public class TwitterDAO implements CrdDao<Tweet, String> {
     this.httpHelper = httpHelper;
   }
 
-  public URI getPostUri(Tweet tweet) {
-    PercentEscaper percentEscaper = new PercentEscaper("", false);
-    try {
-      URI uri = URI.create(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUAL +
-          percentEscaper.escape(tweet.getText()) + AMPERSAND + "long" + EQUAL +
-          tweet.getCoordinates().getCoordinates().get(0) + AMPERSAND + "long" + EQUAL +
-          tweet.getCoordinates().getCoordinates().get(1);
-      );
-      return uri;
-    } catch (URISyntaxException e) {
-      throw new RuntimeException(e);
-    }
-  }
+  /**
+   *
+   * @param tweet
+   * @return tweet
+   */
   @Override
   public Tweet create(Tweet tweet) {
     //Construct URI
     URI uri;
+    String longitude = String.valueOf(tweet.getCoordinates().getCoordinates().get(0));
+    String latitude = String.valueOf(tweet.getCoordinates().getCoordinates().get(1));
     try {
-      uri = getPostUri(tweet);
-    } catch (URISyntaxException | UnsupportedEncodingException e) {
-      throw new IllegalArgumentException("Invalid tweet input", e);
+      // parses the string into a URI
+      uri = new URI(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUAL + tweet.getText() +
+          AMPERSAND + "long" + EQUAL + longitude + AMPERSAND + "lat"
+          + EQUAL + latitude);
+      //Execute HTTP Request
+      HttpResponse response = httpHelper.httpPost(uri);
+      //Validate response amd extract response to Tweet object
+      return parseResponseBody(response, HTTP_OK);
+    } catch (URISyntaxException e) {
+      throw new IllegalArgumentException("Missing required parameter: status. Error executing HTTP request", e);
     }
+  }
 
-    //Execute HTTP Request
-    HttpResponse response = httpHelper.httpPost(uri);
+  @Override
+  public Tweet findById(String id) {
+    URI uri;
+    try {
+      uri = URI.create(API_BASE_URI + SHOW_PATH + QUERY_SYM + "id" + EQUAL + id);
+      //Execute HTTP Request
+      HttpResponse response = httpHelper.httpGet(uri);
+      return parseResponseBody(response, HTTP_OK);
+    } catch (NullPointerException | IllegalArgumentException e) {
+      throw new IllegalArgumentException("Missing required parameter: id. Error executing HTTP request", e);
+    }
+  }
 
-    //Validate response amd extract response to Tweet object
-    return parseResponseBody(response, HTTP_OK);
-
+  @Override
+  public Tweet deleteById(String id) {
+    URI uri;
+    try {
+      uri = URI.create(API_BASE_URI + DELETE_PATH + "/" + id + ".json");
+      HttpResponse response = httpHelper.httpPost(uri);
+      return parseResponseBody(response, HTTP_OK);
+    } catch (NullPointerException | IllegalArgumentException e) {
+      throw new IllegalArgumentException("Missing required parameter: id. Error executing HTTP request", e);
+    }
   }
 
   /**
-   * Check response status code Convert Response Entity to Tweet
+   * Check response status code and convert Response Entity to Tweet
    */
-  private Tweet parseResponseBody(HttpResponse response, Integer expectedStatusCode) {
+  public Tweet parseResponseBody (HttpResponse response, Integer expectedStatusCode) {
     Tweet tweet = null;
 
     //Check response status
@@ -105,26 +122,6 @@ public class TwitterDAO implements CrdDao<Tweet, String> {
       throw new RuntimeException("Unable to convert from JSON str to Object", e);
     }
     return tweet;
-  }
-
-
-
-  @Override
-  public Tweet findById(String s) {
-    URI uri;
-    try {
-      uri = getPostUri
-    }
-  }
-
-  @Override
-  public Tweet deleteById(String s) {
-    return null;
-  }
-
-  public static void main(String[] args) {
-    TwitterHttpHelper helper = new TwitterHttpHelper();
-    TwitterDAO dao = new TwitterDAO(helper);
   }
 
 }
