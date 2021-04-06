@@ -1,10 +1,9 @@
-//-----------------------------------ca.jrvs.apps.twitter.model.Hashtag.java-----------------------------------
-
 package ca.jrvs.apps.twitter.model;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,27 +13,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "indices",
-    "text"
+    "text",
+    "indices"
 })
+@Generated("jsonschema2pojo")
 public class Hashtag {
 
-  @JsonProperty("indices")
-  private List<Integer> indices;
   @JsonProperty("text")
   private String text;
+  @JsonProperty("indices")
+  private List<Integer> indices = null;
   @JsonIgnore
   private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-  @JsonProperty("indices")
-  public List<Integer> getIndices() {
-    return indices;
-  }
-
-  @JsonProperty("indices")
-  public void setIndices(List<Integer> indices) {
-    this.indices = indices;
-  }
 
   @JsonProperty("text")
   public String getText() {
@@ -44,6 +34,16 @@ public class Hashtag {
   @JsonProperty("text")
   public void setText(String text) {
     this.text = text;
+  }
+
+  @JsonProperty("indices")
+  public List<Integer> getIndices() {
+    return indices;
+  }
+
+  @JsonProperty("indices")
+  public void setIndices(List<Integer> indices) {
+    this.indices = indices;
   }
 
   @JsonAnyGetter
