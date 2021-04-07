@@ -3,11 +3,14 @@ package ca.jrvs.apps.twitter.dao;
 import ca.jrvs.apps.twitter.dao.httphelper.HttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.JsonUtil;
+import com.google.gdata.util.common.base.PercentEscaper;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TwitterDAO implements CrdDao<Tweet, String> {
 
@@ -23,6 +26,8 @@ public class TwitterDAO implements CrdDao<Tweet, String> {
 
   //Response code
   private static final int HTTP_OK = 200;
+
+  private static final Logger logger = LoggerFactory.getLogger(TwitterDAO.class);
 
   /**
    * Constructor generates a TwitterDAO object with
@@ -45,15 +50,19 @@ public class TwitterDAO implements CrdDao<Tweet, String> {
   public Tweet create(Tweet tweet) {
     //Construct URI
     URI uri;
+    PercentEscaper percentEscaper = new PercentEscaper("", false);
+    String text = percentEscaper.escape(tweet.getText());
     String longitude = String.valueOf(tweet.getCoordinates().getCoordinates().get(0));
     String latitude = String.valueOf(tweet.getCoordinates().getCoordinates().get(1));
     try {
+      String s = API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUAL + text +
+          AMPERSAND + "long" + EQUAL + longitude + AMPERSAND + "lat" + EQUAL + latitude;
+      logger.debug(s);
       // parses the string into a URI
-      uri = new URI(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUAL + tweet.getText() +
-          AMPERSAND + "long" + EQUAL + longitude + AMPERSAND + "lat"
-          + EQUAL + latitude);
+      uri = new URI(s);
       //Execute HTTP Request
       HttpResponse response = httpHelper.httpPost(uri);
+
       //Validate response amd extract response to Tweet object
       return parseResponseBody(response, HTTP_OK);
     } catch (URISyntaxException e) {
