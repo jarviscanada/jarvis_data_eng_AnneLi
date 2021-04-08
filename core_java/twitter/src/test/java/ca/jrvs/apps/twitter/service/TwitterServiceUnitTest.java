@@ -93,6 +93,7 @@ public class TwitterServiceUnitTest {
     String string_ids[] = {"1377475250343051266"};
     Tweet tweet = TweetObjectBuilder.tweetBuilder(text,longitude,latitude);
     List<Tweet> tweets = service.deleteTweets(string_ids);
+    assertNotNull(tweets);
     when(dao.deleteById(isNotNull())).thenReturn(tweet);
     try {
       service.deleteTweets(string_ids);

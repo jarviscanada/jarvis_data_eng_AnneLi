@@ -2,6 +2,7 @@ package ca.jrvs.apps.twitter.util;
 
 import ca.jrvs.apps.twitter.model.Tweet;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
@@ -19,4 +20,12 @@ public class JsonUtil {
     return (Tweet) objectMapper.readValue(json, cls);
   }
 
+  /**
+   * Enable pretty print JSON output using Jackson
+   */
+  public static String toPrettyJSON(Tweet tweet) throws JsonProcessingException {
+    ObjectMapper objectMapper = new ObjectMapper();
+    String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(tweet);
+    return json;
+  }
 }

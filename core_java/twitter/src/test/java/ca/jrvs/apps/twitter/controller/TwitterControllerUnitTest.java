@@ -6,7 +6,6 @@ import static org.mockito.Mockito.when;
 
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.service.Service;
-import ca.jrvs.apps.twitter.service.TwitterService;
 import ca.jrvs.apps.twitter.util.TweetObjectBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;

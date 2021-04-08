@@ -90,7 +90,7 @@ public class TwitterController implements Controller {
     String[] ids;
     if (args.length < 2) {
       throw new IllegalArgumentException(
-          "USAGE: TwitterCLIApp delete [tweet_id1, tweet_id2...]"
+          "USAGE: TwitterCLIApp delete [tweet_id1, tweet_id2...] [longitude:latitude]"
       );
     } else {
       ids = args[1].split(COMMA);
