@@ -69,7 +69,7 @@ java -jar [.jar file] delete [id1, id2, ...]
 # Implementations
 
 # Design
-![UMLClassDiagram](./assets/UMLDiagram.png)
+![UMLClassDiagram](./assets/UMLDiagram.PNG)
 As seen from the above UML diagram, the classes are modularized to model-view-controller architecture. 
 We do not implement the "view" component as the outputs are received in the command line. The classes
 are modularized to perform it's dedicated functionality and allows it to be decoupled for freedom 
@@ -77,34 +77,36 @@ from chaining dependencies. The TwitterCLIApp is the main class that calls the c
 The controller calls the service layer. The service layer calls the DAO which in turn calls the 
 http helper to access the twitter REST API. 
 
-##Spring
-###TwitterCLIApp (Application layer/ App Main)
+## Spring
+### TwitterCLIApp (Application layer/ App Main)
 The TwitterCLIApp uses the Spring framework for dependency management and leverages Maven to 
 automatically install dependencies/artifacts when loaded. There were three different approaches to 
 implementing the Spring framework for this application: TwitterCLIBean, TwitterCLIComponentScan, and
-TwitterCLISpringBoot.
+TwitterCLISpringBoot. For this project, springboot was used for dependency injections since it's 
+widely used.
 
-###Controller 
+### Controller 
 The Controller layer processes user input (arguments from CLI) and calls the corresponding service 
 layer. It parses the text such as post|show|delete and it's corresponding string id(s), geo objects, 
 field options and further calls the service layer to validate the fields.
 
-###Service
+### Service
 The Service layer handles the business logic of the application, essentially it validates the input 
 fields. It responds with the corresponding error messages if the input fields do not match the 
 required logic. For example, it will return an error if the tweet ID passed in is not a string that 
 contains only numbers. This information exchange between the Controller and Service layer is done via
 Data Transfer Objects (DTOs).
 
-###TwitterDAO
+### TwitterDAO
 The MVC TwitterDAO layer is responsible for persisting data into the appropriate data source (in 
 this case, the Twitter REST API). It leverages HTTPClient library to interact with the REST API. It 
 generates the URI needed to feed the HTTPClient objects, and process the response returned into DAOs.
 
-###HttpHelper
+### HttpHelper
 The HTTPHelper executes the `GET/POST` requests as well as assigns the keys and tokens for authentication.
 It is added as a dependency for the DAO to retrieve/send data to the Twitter API.
-###Models
+
+### Models
 The models used in the Twitter CLI App is the Tweet Model, implemented as POJOS. The 5 classes 
 used to construct the tweet object can be found under the model's folder. The classes are as follows:
 - Coordinates
