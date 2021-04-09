@@ -6,6 +6,7 @@ import ca.jrvs.apps.twitter.util.StringUtil;
 import ca.jrvs.apps.twitter.util.TweetObjectBuilder;
 import java.util.List;
 
+@org.springframework.stereotype.Controller
 public class TwitterController implements Controller {
 
   private static final String COORD_SEP = ":";

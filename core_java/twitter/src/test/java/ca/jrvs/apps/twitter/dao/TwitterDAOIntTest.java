@@ -34,7 +34,7 @@ public class TwitterDAOIntTest {
 
     //Set up Tweet
     hashTag = "#toronto";
-    text = "hello " + hashTag + " " + "welcome to lockdown (3rd wave phase)...123";
+    text = "hello " + hashTag + " " + "welcome to lockdown (3rd wave phase)...123" + System.currentTimeMillis();
     longitude = 12.345;
     latitude = -12.345;
 
@@ -59,7 +59,7 @@ public class TwitterDAOIntTest {
   public void findById() throws Exception {
     //Set up Tweet
     hashTag = "#toronto";
-    text = "hello " + hashTag + " " + "let's find tweet by ID";
+    text = "hello " + hashTag + " " + "let's find tweet by ID" + System.currentTimeMillis();
     longitude = 12.345;
     latitude = -12.345;
     tweet = TweetObjectBuilder.tweetBuilder(text,longitude,latitude);
