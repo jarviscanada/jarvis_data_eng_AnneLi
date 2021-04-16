@@ -7,7 +7,7 @@ The image below is an entity relationship diagram showing the relationships amon
 ![ER Diagram](./assets/ERD.PNG)
 
 ## Design Patterns
-
+### Data Access Objects (DAO)
 DAO's (Data Access Objects) are one of the most common patterns when dealing with databases.
 They provide an abstraction layer between the raw JDBC code and the business logic. They are useful
 because they allow us to have a single instance of the database and to compute the joins using the
