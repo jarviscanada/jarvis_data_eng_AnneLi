@@ -85,4 +85,8 @@ render_pdf
 overwrite_readme
 
 echo "Done!"
+<<<<<<< HEAD
 exit 0
+=======
+exit 0
+>>>>>>> 53d3d23a8650c20b352d00ef11b68431014e7464
