@@ -1,0 +1,114 @@
+# Preferred name (Characters only)
+name: "Anne Li"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AnneLi
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I recently graduated from Ryerson University where I received my Bachelor of Engineering, majoring in Computer Engineering. I delved into programming during my time at university and I am fascinated by its endless possibilities in solving problems. Previously I did a 4-month internship at De Havilland, an aircraft manufacturing company, where I worked as a software engineer to help build their data-visualization tool. Currently, I am a data engineer trainee at Jarvis where I have been able to challenge myself with various projects utilizing Linux/Bash, Java 8, Docker, Maven, SpringBoot, GCP (and MORE) in a collaborative environment. I keep myself open to trying new things; whether that be my technical abilities, in personal projects, or providing quality service, I'm always eager to continuously learn to be a better engineer.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - C
+    - JavaScript
+    - Python
+    - HTML
+    - CSS
+  # At least 5 skills
+  familiar:
+    - Docker
+    - GCP
+    - Pub/Sub
+    - REST API
+    - Spring
+    - Django/Flask
+    - Matlab
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: This project automates the process of monitoring servers/nodes of linux that are connected through a switch and communicates internally through IPv4 addresses. Implemented bash scripts that obtain data on hardware specifications and on-going Linux resource usage data.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Implemented a CLI app that post|show|delete tweets to the user account from the command-line via Twiiter REST API using the MVC architecture."
+      - "JDBC App: This project sets up a connection to the PostgreSQL database by leveraging the JDBC API that manages customer and order records."
+      - "Grep App: This app echoes partial functionality of the linux command `grep`. The app searches for a text pattern recursively through all the files in a given directory and outputs the matched lines to a designated file."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: "In-progress"
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: "In-progress"
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: "In-progress"
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: "In-progress"
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+  #project name
+  - name: "SERVE.AI (Web application)"
+    #URL is optional
+    #git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed an Online Cafeteria Application utilizing the Django framework, SQLite3, Bootstrap using Agile methodologies and practices. Practiced SDLC process models, requirements elicitation, system modelling, project management, teamwork, navigating documentations and software testing.
+  - name: "SMART CITY APPLICATION"
+    #git_url:
+    description: Learned about distributed System and networking technology by designing and developing an urban IoT website which generates pickup schedule based on real-time capacity of sensor-attached garbage bin. Programmed ESP8266 using C++ in Arduino IDE to send JSON data via MQTT protocol to Raspberry Pi.
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Data Engineer"
+    company: "Jarvis"
+    duration: "Jan 2021-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Implemented projects that solves Big-data problems utilizing a set of tools and technologies such as Linux, SQL, Core Java, SpringBoot, DevOps/Cloud, Hadoop and Spark/Scala. Conducted and participated in daily scrum meetings in a bi-weekly sprint."
+  - title: "Coding Instructor"
+    company: "Codezilla"
+    duration: "Jun 2020-Dec 2020"
+    description: "Led summer camp programs on game development and scratch coding to help youths develop problem-solving skills."
+  - title: "Software Engineer Intern"
+    company: "De Havilland"
+    duration: "May 2019-August 2019"
+    description: "Developed a data visualization tool to analyze performance efficiently using PowerBI and VBA. Contributed to automation projects and development of technology roadmaps."
+#List of edcuation
+education:
+  - school_name: "Ryerson University"
+    duration: "2015-2020"
+    degree: "Bachelor of Engineering"
+    department: "Electrical and Computer Engineering"
+    # optional
+    awards_achievements: 
+      - "Dean's List (2019, 2020)"
+
+#Optional section
+others:
+    #category     
+    - title: "Activities/Hobbies"
+      bullets:
+        - "Hackathon Winner (RU Hacks 2020)"
+        - "Web developer (Volunteer at IEEE Ryerson Electronics Chapter)"
+        - "Hiking and exploring Ontario"
