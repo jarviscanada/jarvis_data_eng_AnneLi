@@ -27,7 +27,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AnneLi](ht
 
 **Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/python_data_anlytics)]: In-progress
 
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/hadoop)]: Not Started
+**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/hadoop)]: In-progress
 
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AnneLi/tree/master/spark)]: In-progress
 
