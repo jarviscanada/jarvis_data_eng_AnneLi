@@ -29,7 +29,7 @@ distributed using its Content Distribution Network (CDN). Transactional operatio
 through APIs are handled by an Azure Kubernetes Cluster, which then executes the requested transactions 
 and updates it on Azure SQL Server.
 
-![](./assets/python_analytics_arch.png)
+![system_design_arch](./assets/python_analytics_arch.png)
 
 ## Data Analytics and Wrangling
 The detailed data analytics performed can be found in this [notebook](./retail_data_analytics_wrangling.ipynb). 
@@ -53,7 +53,7 @@ what each segments' recency and frequency score represent is shown below:
 - New Customers R [(4 – 5), F(0 – 1)]
 - Need Attention R [(2 – 3), F(2 – 3)]
 
-![](./assets/recency_frequency_grid.png)
+![recency_frequency_grid](./assets/recency_frequency_grid.png)
 
 # Improvements
 
