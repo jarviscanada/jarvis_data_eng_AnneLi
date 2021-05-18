@@ -53,7 +53,7 @@ what each segments' recency and frequency score represent is shown below:
 - New Customers R [(4 – 5), F(0 – 1)]
 - Need Attention R [(2 – 3), F(2 – 3)]
 
-![recency_frequency_grid](./assets/recency_frequency_grid.png)
+![recency_frequency_grid](./assets/recency_frequency_grid.PNG)
 
 # Improvements
 
