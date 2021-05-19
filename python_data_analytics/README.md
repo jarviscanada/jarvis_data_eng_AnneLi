@@ -64,41 +64,35 @@ Can't Lose = 71, Hibernating = 1522, Champions = 852
 
 ### Can't Lose Segment:
 
-The last shopping date of the customers is on average 353 days before.
-Customers have made an average of 16 purchases.
-Customers spent an average of £ 8356.
+Customers in this segment have not recently made a purchase. For this reason, we need to prepare a
+discount and gift campaign for this segment. These customers made a large number of purchases when
+they made purchases before. However, recency values are lower than they should be. The campaign to be
+implemented for these customers should include both items purchased and recommendations based on
+previous activities. New and popular products associated with the products that they were interested
+in can also be included in this campaign. Situations that will cause these customers to stop buying
+need to be investigated.
 
-### Hibernating Segment:
-
-The last shopping date of the customers is 481 days before average.
-Customers made an average of 1 purchases.
-Customers spent an average of £ 438.
+- The last shopping date of the customers is on average 353 days before.
+- Customers have made an average of 16 purchases.
+- Customers spent an average of £ 8356.
 
 ### Champions Segment:
 
-The last shopping date of the customers is 30 days before average.
-Customers made an average of 19 purchases.
-Customers spent an average of £ 10796.
+Customers in this segment are responsible for most of the revenue. Campaigns should be implemented
+to ensure the continuity of the shopping of these customers.
 
-### Can't Lose Segment:
-
-Customers in this segment have not recently made a purchase. For this reason, we need to prepare a 
-discount and gift campaign for this segment. These customers made a large number of purchases when 
-they made purchases before. However, recency values are lower than they should be. The campaign to be 
-implemented for these customers should include both items purchased and recommendations based on 
-previous activities. New and popular products associated with the products that they were interested 
-in can also be included in this campaign. Situations that will cause these customers to stop buying 
-need to be investigated.
+- The last shopping date of the customers is 30 days before average.
+- Customers made an average of 19 purchases.
+- Customers spent an average of £ 10796.
 
 ### Hibernating Segment:
 
 Customers in this segment have not made a purchase for a long time. However, by offering discounts, 
 they may be attracted to another purchase.
 
-#### Champions Segment:
-
-Customers in this segment are responsible for most of the revenue. Campaigns should be implemented 
-to ensure the continuity of the shopping of these customers.
+- The last shopping date of the customers is 481 days before average.
+- Customers made an average of 1 purchases.
+- Customers spent an average of £ 438.
 
 # Improvements
 
