@@ -38,7 +38,7 @@ One of the most significant findings on consumer behavior comes from the Recency
 (RFM) analysis which breaks down customers into different segments based on the category they fall 
 under. The segments separate users from champions to hibernating users for example, and provides 
 engagement strategies for marketing team, tailored for each segment. A more detailed overview of 
-what each segments' recency and frequency score represent is shown below:
+what each segments' recency and frequency score represent is shown below: 
 
 ### The Recency and Frequency Grid breakdown
 
@@ -53,11 +53,56 @@ what each segments' recency and frequency score represent is shown below:
 - New Customers R [(4 – 5), F(0 – 1)]
 - Need Attention R [(2 – 3), F(2 – 3)]
 
+A frequency recency grid provides a visual summary of LGS's clients sorted by RFM type:
 ![recency_frequency_grid](./assets/recency_frequency_grid.PNG)
+
+In our evaluation, 3 segments are emphasized: "Can't Lose", "Hibernating" and "Champions".
+
+### Number of customers for segments:
+
+Can't Lose = 71, Hibernating = 1522, Champions = 852
+
+### Can't Lose Segment:
+
+The last shopping date of the customers is on average 353 days before.
+Customers have made an average of 16 purchases.
+Customers spent an average of £ 8356.
+
+### Hibernating Segment:
+
+The last shopping date of the customers is 481 days before average.
+Customers made an average of 1 purchases.
+Customers spent an average of £ 438.
+
+### Champions Segment:
+
+The last shopping date of the customers is 30 days before average.
+Customers made an average of 19 purchases.
+Customers spent an average of £ 10796.
+
+### Can't Lose Segment:
+
+Customers in this segment have not recently made a purchase. For this reason, we need to prepare a 
+discount and gift campaign for this segment. These customers made a large number of purchases when 
+they made purchases before. However, recency values are lower than they should be. The campaign to be 
+implemented for these customers should include both items purchased and recommendations based on 
+previous activities. New and popular products associated with the products that they were interested 
+in can also be included in this campaign. Situations that will cause these customers to stop buying 
+need to be investigated.
+
+### Hibernating Segment:
+
+Customers in this segment have not made a purchase for a long time. However, by offering discounts, 
+they may be attracted to another purchase.
+
+#### Champions Segment:
+
+Customers in this segment are responsible for most of the revenue. Campaigns should be implemented 
+to ensure the continuity of the shopping of these customers.
 
 # Improvements
 
--  Expand on RFM analysis with a more comprehensive plot including magnitudes.
+-  Expand on RFM analysis with a more comprehensive plot including magnitudes
 -  Leverage the other RFM segment tags to suggest marketing techniques that reaches a wider range
    of consumers
--  Apply machine learning model to forecast revenue performance
+-  Apply machine learning model to forecast revenue performance 
